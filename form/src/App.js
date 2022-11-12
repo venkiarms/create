@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import {useFormik} from 'formik';
 import * as yup from 'yup';
+import { Any } from './name';
 
 // const validate = values =>{
 //   var errors = {}
@@ -41,12 +42,14 @@ function App() {
   return (
     <div className="App">
       <h1>Hello world</h1>
+      <Any />
       <form onSubmit={formik.handleSubmit}>
         <input type="text" name="name" value={formik.values.name} onChange={formik.handleChange}/><br/><br/>
         {formik.errors.name}<br/><br/>
         <input type="text" name="email" value={formik.values.email} onChange={formik.handleChange}/><br/><br/>
         {formik.errors.email}<br/><br/>
-        <button>Click</button>
+        <button style={{backgroundColor: 'green'}}>Click</button>
+
       </form>
       
     </div>
